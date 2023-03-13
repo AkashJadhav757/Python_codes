@@ -1,0 +1,74 @@
+1 : Add the data into file until user types "Quit"
+
+--> 
+
+f = open("C:\\Users\\Dell\\Desktop\\file_handling_Trail.txt","a")
+
+while True: 
+    msg = input('enter the sentence you wish to add...')
+    if msg == 'QUIT':
+        break
+    else:
+        f.write(msg)
+        f.write('\n')
+        
+f.close()
+
+====================================================================
+2 : Read all the data in at once.
+
+-->
+
+f = open("C:\\Users\\Dell\\Desktop\\Data Engineering\\file_demo\\test2.txt","r")
+result = f.read(5)
+   
+print(result)
+
+f.close()
+
+====================================================================
+3 : Printing all the lines in txt file.
+
+-->
+
+path = 'E:\\aroha_python\\football.txt'
+
+with open (path , 'r' , encoding = 'utf8') as file1:
+    for line in file1:
+        print(line)
+
+====================================================================
+
+4 : Read a file, print only countries in file
+
+--> 
+
+with open (path , 'r') as file1:
+    for i, line in enumerate(file1):
+        if i != 0:
+            #print(line)
+            content = line.split()
+            print(content[1])
+
+====================================================================
+
+5 : User wants to gets emp id and salary of everyone and also wants to know how much total money is spent
+
+print ('----main block starts here -----')
+fname = input('enter the file name ?? ')
+f = open("C://User//Dell//Desktop//Data Engineering//November//30-11-22//emp_data_Copy.txt"+fname,"r")
+separate = input('what is the FIELD SEPARATOR ? ')
+total = 0
+while True:
+    data = f.readline()
+    if data == '':
+        break
+    #print (data)
+    lst = data.split(separate)
+    if lst[2] == 'IT':  	# use this only if you want the details of people from IT industry. for all details remove this.
+        sal = int(lst[4])
+        print(lst[1],sal)
+        total = total + sal
+f.close()
+print ('total salary paid to staff ',total)
+print ('----main block ends here -----')
