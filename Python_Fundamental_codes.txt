@@ -1,0 +1,197 @@
+1 : check whether this number m = 125 is three digit number or not
+   and is this divisible by 5 as well as 7 ?
+
+Answer --->
+m=125
+
+if m>=100 and m<=999:
+    if m%5==0:
+        if m%7==0:
+            print ('Yes,M is 3 digit number and is divisible by 5 as well as 7')
+        else:
+            print ('M is a three digit number and is divisible by 5 but not by 7')
+    else:
+        print ('M is a three digit number and is not divisible by 5')
+else:
+    print('M is not a 3 digit number')
+
+=====================================================================================
+
+2 : if the cost of the items purchased is more than 10000 then there is 5% discount 
+   if the cost of the items purchased is more than 5000 but less than 10000 and the payment mode is not credit card then 
+   discount is 3% otherwise no discount
+
+Answer --->
+item_cost=7500
+payment_mode='debit card'
+
+if item_cost>10000:
+    print ('5% discount is available')
+elif item_cost>5000 and item_cost<10000 and payment_mode!='credit card':
+    print ('3% discount is available')
+else:
+    print ('No discount is available')
+
+
+=====================================================================================
+
+3:  input the gross salary of the employee per month
+    given tax to be computed is as following 
+    salary above 70000 then tax is 14.5%
+    salary above 50000 but less than 70000 then tax is 10.5%
+    salary above 35000 but less than 50000 then tax is 7.5%
+
+    net salary = gross salary - tax
+    display the net salary after the tax is computed and dedcuted.
+
+Answer --->
+
+gross_salary= 
+
+if gross_salary>70000: 
+    print ('Tax is 14.5% on your gross salary')
+    print ('Tax =',gross_salary/100*14.5,'rs')  
+    print ('Your net salary is',gross_salary-gross_salary/100*14.5,'rs' )
+elif gross_salary>50000 and gross_salary<70000:
+    print ('Tax is 10.5% on your gross salary')
+    print ('Tax =',gross_salary/100*10.5,'rs')
+    print ('Your net salary is',gross_salary-gross_salary/100*10.5,'rs' )
+elif gross_salary>35000 and gross_salary<50000:
+    print ('Tax is 7.5% on your gross salary')
+    print ('Tax =',gross_salary/100*7.5,'rs')
+    print ('Your net salary is',gross_salary-gross_salary/100*7.5,'rs' )
+else:
+    print ('Tax % for salary below 35000 has not been declared yet')
+
+=====================================================================================
+
+4 : Print the multiplication table of a number. number is as per user input.
+
+-->
+
+m = int(input('the number for which you wish the mul table ? ' ))
+for n in range(1,11,1):
+    print (m,'x',n,'=',(m*n))
+
+=======================================================================================
+5. input 5 numbers , add all the number, find the total, avg, highest and lowest withour using any inbuild function.
+
+---Solution-->
+
+add = 0
+count = 0
+high = 0
+low = 43432323344454657665
+
+for i in range(5):
+    user = int(input('Enter a number : '))
+    add = add + user
+    count = count + i
+    if user>high:
+        high = user
+    if user<low:
+        low = user
+print('-----------------------')
+print('Sum is',add)
+print('Average is',add/count)
+print('Highest number is',high)
+print('Lowest number is',low)
+
+=======================================================================================
+
+6 : remove an element from the list
+
+--> name=['Manoj','Kiran','Asma','Jolly Paul','Bindu','Pankaj','Ananth']
+name1 = input('Enter the name which you wish to remove')
+name.remove(name1)
+
+print(name)
+for i in name:
+    print(i,end=',')
+
+=========================================================================================
+
+7 : Find the position of the element
+
+--> 
+
+names= ['Akash','Omkar','Ashabai','Kakasaheb']
+x=input('Kindly enter the name whose number you want to check')
+if x in names:
+    pos1 =names.index(x)
+    print ('name',x,'is found at position ',pos1+1)
+else:
+    print (x,'Does not exists in the record')
+
+=========================================================================================
+8 : ATM Transaction
+
+--> 
+
+print('Starting ATM Transaction')
+balance = 10000
+print('-> Your balance is rupees',balance)
+print('Kindly enter your card ')
+pin = int(input('Enter your Pin '))
+if pin==1234:
+    amount = int(input('Enter the amount to be withdrawn : '))
+    if amount>balance:
+        print('Insufficient Balance, You current balance is rs',balance)
+    elif amount>9000:
+        print('Unsuccesfull TX, need to maintain minimum 1000 rs balance')
+    elif amount<balance:
+        print('Transaction Succesfull ')
+        print('Your current balance is',balance - amount)
+else:
+    print('Wrong Pin')
+
+=======================================================================================
+9 : Aircraft Fuel calculator 
+-->
+
+'''
+Fuel data is received in liters unit from Petroleum company.
+- we have to convert it into Kgs. ( ltrs * kgs )
+- dept_fuel = 8000
+- uplift ltrs = 
+- spg = 
+- arrival fuel = dept fuel - uplift_kgs
+'''
+
+final_fuel = float(input('Enter the final fuel figure(kgs) : '))
+uplift_ltrs = float(input('Enter the fuel qty uplifted(ltrs) :'))
+spg = float(input('Enter Special gravity :'))
+
+print('--------------------------')
+print('----DEPARTURE FUEL DETAILS----')
+print('--------------------------')
+print('Total fuel at departure :',final_fuel)
+print('Left and right tank : ',final_fuel/2,'kgs')
+print('--------------------------')
+print('----Uplift FUEL DETAILS----')
+print('--------------------------')
+uplift_kgs = uplift_ltrs * spg
+print('Total uplifted fuel in kgs is :',uplift_kgs)
+print('Left and Right tank :',uplift_kgs/2)
+print('--------------------------')
+print('-----Arrival FUEL DETAILS----')
+print('--------------------------')
+print('Total Arrival fuel in kgs is :',final_fuel - uplift_kgs)
+print('Left and Right tank :',(final_fuel - uplift_kgs)/2)
+
+===============================================================================
+
+10 : Create a DataFrame 
+-->
+
+import pandas as pd
+import numpy as np
+technologies   = ({
+    'Courses':["Spark","PySpark","Hadoop","Python","Pandas",None,"Spark","Python"],
+    'Fee' :[22000,25000,23000,24000,np.nan,25000,25000,22000],
+    'Duration':['30day','50days','55days','40days','60days','35day','','50days'],
+    'Discount':[1000,2300,1000,1200,2500,1300,1400,1600]
+          })
+row_labels=['r0','r1','r2','r3','r4','r5','r6','r7']
+df = pd.DataFrame(technologies, index=row_labels)
+print(df)
